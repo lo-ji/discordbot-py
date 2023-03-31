@@ -43,7 +43,7 @@ async def on_message(message):
         await message.channel.send(as_Hao[random.randrange(0, 2)])
 
     if message.content == '내이름':
-        await message.channel.send(message.author.username + '맞죠?') #이거 동작 안 함. 봐야댐
+        await message.channel.send(message.author.name + '맞죠?') #이거 동작 안 함. 봐야댐
 
     if message.content == '야':
         await message.channel.send('뭐')
