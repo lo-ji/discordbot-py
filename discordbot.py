@@ -43,7 +43,10 @@ async def on_message(message):
         await message.channel.send(as_Hao[random.randrange(0, 2)])
 
     if message.content == '내이름':
-        await message.channel.send(message.author.nick + '맞죠?')
+        await message.channel.send(message.author.username + '맞죠?') #이거 동작 안 함. 봐야댐
+
+    if message.content == '야':
+        await message.channel.send('뭐')
 
 #---------------------------------------------------------------------------------------------------
 
@@ -64,6 +67,10 @@ async def on_message(message):
 
     if message.content.startswith('왜'):
         await message.channel.send(as_why[random.randrange(0, 4)])
+
+    if message.content.startswitch('뭐더라'):
+        await message.channel.send('4월 생존신고 진행중입니다~! 디스코드 생존신고 채널에 생존신고 눌러주세요!' +
+         '닉네임도 생존신고 기간동안은 단톡방과 되도록 맞춰주세요!')
 
 
 #---------------------------------------------------------------------------------------------------
