@@ -23,19 +23,19 @@ async def on_message(message):
     if message.content == '이돟님':
         await message.channel.send(as_LeeDonim[random.randrange(0, 4)])
 
-    if message.content == ('ㅎㅇ'):
+    if message.content == 'ㅎㅇ':
         await message.channel.send('ㅎㅇ')
 
-    if message.content == ('ㅂㅇ'):
+    if message.content == 'ㅂㅇ':
         await message.channel.send('ㅂㅇ')
 
-    if message.content == ('아항'):
+    if message.content == '아항':
         await message.channel.send('아항')
 
-    if message.content == ('어서오세요'):
+    if message.content == '어서오세요':
         await message.channel.send('안녕히가세요')
 
-    if message.content == ('하오님'):
+    if message.content == '하오님':
         await message.channel.send(as_Hao[random.randrange(0, 1)])
 
 #---------------------------------------------------------------------------------------------------
@@ -43,10 +43,10 @@ async def on_message(message):
     if message.content.startswith('안녕'):
         await message.channel.send(as_Hi[random.randrange(0, 4)])
 
-    if message.content.startswith('화이팅!'): # 홧팅, 화이팅, 화이팅! 일 경우
+    if message.content.startswith('화이팅!'):
         await message.channel.send('ㅎㅇㅌ')
 
-    if message.content.startswith('ㅋㅋ'): # 
+    if message.content.startswith('ㅋㅋ'): 
         await message.channel.send(as_kkk[random.randrange(0, 4)])
         
     if message.content.startswith('ㅠㅠㅠㅠㅠ'): 
