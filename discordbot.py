@@ -110,6 +110,10 @@ async def on_message(message):
 
     if str(message.author) == '콘티#1106':
         await message.channel.send('왔는가 오리여.')
+
+    if str(message.author.name) == '콘티#1106':
+        await message.channel.send('왔는가 오리여.')
+
 #---------------------------------------------------------------------------------------------------
 # 새로운 함수 선언
 # @tasks.loop(seconds=1)
