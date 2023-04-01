@@ -96,6 +96,9 @@ async def on_message(message):
         await message.channel.send('무슨일로 나를 부른것이지?')
         await message.channel.send('이돟vs차은우 이딴거 물어보면 아주 그냥;')
 
+    if message.author.name == 'HODO#5363' and message.content.startswith('돈내놔'):
+        await message.channel.send('2000만원이면 돼.')
+
     if message.author.name == '콘티#1106':
         await message.channel.send('왔는가 오리여.')
 #---------------------------------------------------------------------------------------------------
