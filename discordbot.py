@@ -4,7 +4,9 @@ import discord
 from dotenv import load_dotenv
 import os
 import random
-from datetime import datetime
+from discord.ext import tasks # 반복 작업을 위한 패키지
+import datetime # 현재 시간을 받아와 구조체에 넣어주는 용도로 사용할 패키지
+import time # 중복 전송을 방지하기 위해 사용할 패키지
 load_dotenv()
 
 PREFIX = os.environ['PREFIX']
@@ -43,11 +45,13 @@ async def on_message(message):
         await message.channel.send(as_Hao[random.randrange(0, 2)])
 
     if message.content == '내이름':
-        await message.channel.send(message.author.name + '맞죠?') #이거 동작 안 함. 봐야댐
+        await message.channel.send(message.author.name + '맞죠?')
 
     if message.content == '야':
         await message.channel.send('뭐')
-
+    
+    
+   
 #---------------------------------------------------------------------------------------------------
 
     if message.content.startswith('안녕'):
@@ -71,6 +75,30 @@ async def on_message(message):
     if message.content.startswitch('뭐더라'):
         await message.channel.send('4월 생존신고 진행중입니다~! 디스코드 생존신고 채널에 생존신고 눌러주세요!' +
          '닉네임도 생존신고 기간동안은 단톡방과 되도록 맞춰주세요!')
+        
+
+    
+#---------------------------------------------------------------------------------------------------
+# 이돟전용
+
+    if message.author.name == '이돟' and message.content.startswith('어나더 에고'):
+        await message.channel.send('조용히해')
+        await message.channel.send('또다른나')
+        await message.channel.send('네 힘은 필요없다고 했을텐데')
+
+
+
+#---------------------------------------------------------------------------------------------------
+# 새로운 함수 선언
+@tasks.loop(seconds=1)
+async def every_hour_notice(self):
+    if datetime.datetime.now().minute == 17 and datetime.datetime.now().second == 0:
+        await client.get_guild("815850415131590676").get_channel("815850415131590680").send("현재 {}시 {}분 입니다.".format(datetime.datetime.now().hour, datetime.datetime.now().minute))
+
+        # 1초 sleep하여 중복 전송 방지. 1분에 한 번은 minutes=1, 2시간에 한 번은 hours=2로 설정하면 되겠습니다.
+        time.sleep(1)
+
+
 
 
 #---------------------------------------------------------------------------------------------------
@@ -87,24 +115,15 @@ as_why = ['본인의 아이큐를 1부터 10중에 표현하자면',
 
 self_ = ['뀨><',
          '이야기는 끝났다. 박수쳐라',
-         ' 다른 사람에게 허용된다고 해서, 너에게도 허용되는건 아니다.​',
+         ' 다른 사람에게 허용된다고 해서, 너에게도 허용되는건 아니다.',
          '사랑하는 사람들은 미친 사람이다',
          '4월 생존신고 진행중입니다~! 디스코드 생존신고 채널에 생존신고 눌러주세요!' +
-         '닉네임도 생존신고 기간동안은 단톡방과 되도록 맞춰주세요!']
+         '닉네임도 생존신고 기간동안은 단톡방과 되도록 맞춰주세요!',
+         '방장의 특별권한데스',
+         '나는 이돟의 또다른 자아다.']
 #---------------------------------------------------------------------------------------------------
-# 시간
-@client.event
-async def on_time(message):
-    now = datetime.now()
-
-    if now.hour == 4:
-        await message.channel.send('점심시간~ 밥은 먹고 그려야죠')
-        return
+        
     
-    elif now.hour == 15 and now.minute == 13:
-        await message.channel.send('점심시간~ 밥은 먹고 그려야죠')
-
-
 
 
 
