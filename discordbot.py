@@ -52,10 +52,13 @@ async def on_message(message):
     
     if message.content == '@이돟':
         await message.channel.send('부르지마라.')
+
+    if message.content == '?':
+        await message.channel.send('?????')
    
 #---------------------------------------------------------------------------------------------------
 
-    if message.content.startswith('안녕'):
+    if message.content.startswith('안녕하'):
         await message.channel.send(as_Hi[random.randrange(0, 4)])
 
     if message.content.startswith('화이팅!'):
@@ -64,7 +67,7 @@ async def on_message(message):
     if message.content.startswith('ㅋㅋ'): 
         await message.channel.send(as_kkk[random.randrange(0, 4)])
         
-    if message.content.startswith('ㅠㅠㅠㅠㅠ'): 
+    if message.content.startswith('ㅠㅠㅠ'): 
         await message.channel.send(as_TT[random.randrange(0, 4)])
 
     if message.content.startswith('만장님'):
@@ -82,6 +85,9 @@ async def on_message(message):
 
     if message.content.startswith('이돟vs차은우'):
         await message.channel.send('치명적인 오류가 발생되어 뇌를(을) 종료합니다.')
+
+    if message.content.startswith('피카'):
+        await message.channel.send('피카피카!')
     
 #---------------------------------------------------------------------------------------------------
 # 이돟전용
@@ -120,8 +126,8 @@ async def on_message(message):
 as_LeeDonim = ['네에', '네?', '뭐요', '?', '말걸지마세요']
 as_Die = ['뒤질래', '님선', 'ㅗ']
 as_Hao = ['뭐!? 하오님이라고!??', '하오님은 언제나 이뻐! 멋져! 귀여워!']
-as_Hi = ['안녕하쇼', '안녕하십니끄아아아아아아아아아아아아아아아악', '안녕하냐', '밥은 먹고 다니냐', '카레라이스']
-as_kkk = ['ㅋㅋㅋ', '허파에 바람들었어요?', '암흑이론에 대한 설명', 'ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ', 'ㅋㅋ']
+as_Hi = ['안녕하쇼', '안녕하냐', '밥은 먹고 다니냐', '카레라이스']
+as_kkk = ['ㅋㅋㅋ', '허파에 바람들었어요?', 'ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ', 'ㅋㅋ']
 as_TT = ['아 거, 울지 마쇼', '신파극소리나네', '춘자잣 춘잣 춘자자잣', '홍삼을 먹도록 하렴', '쯧...']
 as_why = ['본인의 아이큐를 1부터 10중에 표현하자면', 
           '돼지고기 김치찌개 맛내는 비법 진한 국물이 맛있는 돼지고기 김치찌개입니다.'
@@ -130,7 +136,7 @@ as_why = ['본인의 아이큐를 1부터 10중에 표현하자면',
 
 self_ = ['뀨><',
          '이야기는 끝났다. 박수쳐라',
-         ' 다른 사람에게 허용된다고 해서, 너에게도 허용되는건 아니다.​',
+         ' 다른 사람에게 허용된다고 해서, 너에게도 허용되는건 아니다.',
          '사랑하는 사람들은 미친 사람이다',
          '4월 생존신고 진행중입니다~! 디스코드 생존신고 채널에 생존신고 눌러주세요!' +
          '닉네임도 생존신고 기간동안은 단톡방과 되도록 맞춰주세요!',
