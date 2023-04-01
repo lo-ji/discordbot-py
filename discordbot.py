@@ -92,6 +92,8 @@ async def on_message(message):
         await message.channel.send('또다른나')
         await message.channel.send('네 힘은 필요없다고 했을텐데')
 
+    if message.author.name == '콘티':
+        await message.channel.send('o<-<')
 #---------------------------------------------------------------------------------------------------
 # 새로운 함수 선언
 @tasks.loop(seconds=1)
