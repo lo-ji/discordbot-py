@@ -76,24 +76,28 @@ async def on_message(message):
     if message.content.startswitch('뭐더라'):
         await message.channel.send('4월 생존신고 진행중입니다~! 디스코드 생존신고 채널에 생존신고 눌러주세요!' +
          '닉네임도 생존신고 기간동안은 단톡방과 되도록 맞춰주세요!')
-        
+    
+    if message.content.startswith('@이돟'):
+        await message.channel.send(summons_leedoh[random.randrange(0, 7)])
 
+    if message.content.startswith('이돟vs차은우'):
+        await message.channel.send('치명적인 오류가 발생되어 뇌를(을) 종료합니다.')
     
 #---------------------------------------------------------------------------------------------------
 # 이돟전용
 
-    if message.author.name == '이돟' and message.content.startswith('어나더 에고'):
+    if message.author.name == 'HODO#5363' and message.content.startswith('어나더 에고'):
         await message.channel.send('조용히해')
         await message.channel.send('또다른나')
         await message.channel.send('네 힘은 필요없다고 했을텐데')
 
-    if message.author.name == '이돟' and message.content.startswith('@이돟'):
-        await message.channel.send('조용히해')
-        await message.channel.send('또다른나')
-        await message.channel.send('네 힘은 필요없다고 했을텐데')
+    if message.author.name == 'HODO#5363' and message.content.startswith('@이돟'):
+        await message.channel.send('또다른나. 반갑군.')
+        await message.channel.send('무슨일로 나를 부른것이지?')
+        await message.channel.send('이돟vs차은우 이딴거 물어보면 아주 그냥;')
 
-    if message.author.name == '콘티':
-        await message.channel.send('o<-<')
+    if message.author.name == '콘티#1106':
+        await message.channel.send('왔는가 오리여.')
 #---------------------------------------------------------------------------------------------------
 # 새로운 함수 선언
 @tasks.loop(seconds=1)
@@ -104,8 +108,6 @@ async def every_hour_notice(self):
 
         # 1초 sleep하여 중복 전송 방지. 1분에 한 번은 minutes=1, 2시간에 한 번은 hours=2로 설정하면 되겠습니다.
         time.sleep(1)
-
-
 
 
 #---------------------------------------------------------------------------------------------------
@@ -128,6 +130,10 @@ self_ = ['뀨><',
          '닉네임도 생존신고 기간동안은 단톡방과 되도록 맞춰주세요!',
          '방장의 특별권한데스',
          '나는 이돟의 또다른 자아다.']
+
+
+summons_leedoh = ['나를 부른 이유는?', '조용히 해.', '귀찮군.', '또 다른 나는 어디에 있지?',
+                  '할 일이 하나 늘었군.', '미미쨩 다이스키다욧 >_<//', '어둠속에서 깨어났다. 나를 깨운자여 죽어라.', self_[random.randrange(0, 7)]]
 #---------------------------------------------------------------------------------------------------
         
     
