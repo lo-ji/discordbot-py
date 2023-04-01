@@ -103,14 +103,14 @@ async def on_message(message):
         await message.channel.send('왔는가 오리여.')
 #---------------------------------------------------------------------------------------------------
 # 새로운 함수 선언
-@tasks.loop(seconds=1)
-async def every_hour_notice(self):
-    if datetime.datetime.now().minute == 17: # and datetime.datetime.now().second == 0:
-        await on_message('Debug')
-        await client.get_guild("815850415131590676").get_channel("815850415131590680").send("현재 {}시 {}분 입니다.".format(datetime.datetime.now().hour, datetime.datetime.now().minute))
+# @tasks.loop(seconds=1)
+# async def every_hour_notice(self):
+#     if datetime.datetime.now().minute == 17: # and datetime.datetime.now().second == 0:
+#         await on_message('Debug')
+#         await client.get_guild("815850415131590676").get_channel("815850415131590680").send("현재 {}시 {}분 입니다.".format(datetime.datetime.now().hour, datetime.datetime.now().minute))
 
-        # 1초 sleep하여 중복 전송 방지. 1분에 한 번은 minutes=1, 2시간에 한 번은 hours=2로 설정하면 되겠습니다.
-        time.sleep(1)
+#         # 1초 sleep하여 중복 전송 방지. 1분에 한 번은 minutes=1, 2시간에 한 번은 hours=2로 설정하면 되겠습니다.
+#         time.sleep(1)
 
 
 #---------------------------------------------------------------------------------------------------
