@@ -88,7 +88,12 @@ async def on_message(message):
 
     if message.content.startswith('피카'):
         await message.channel.send('피카피카!')
+
+    if message.content.startswith('돈내놔'):
+        await message.channel.send('200만원이면 돼.')
     
+    if message.content.startswith('나의 이름은?'):
+        await message.channel.send(str(message.author))
 #---------------------------------------------------------------------------------------------------
 # 이돟전용
 
@@ -111,7 +116,7 @@ async def on_message(message):
     if str(message.author) == '콘티#1106':
         await message.channel.send('왔는가 오리여.')
 
-    if str(message.author.name) == '콘티#1106':
+    if str(message.author.name) == '콘티':
         await message.channel.send('왔는가 오리여.')
 
 #---------------------------------------------------------------------------------------------------
