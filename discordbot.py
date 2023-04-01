@@ -48,16 +48,13 @@ async def on_message(message):
         await message.channel.send(as_Hao[random.randrange(0, 1)])
     
     if message.content == '죽어라':
-        await message.channel.send(as_Hao[random.randrange(0, 2)])
+        await message.channel.send(as_Die[random.randrange(0, 2)])
 
     if message.content == '내이름':
         await message.channel.send(message.author.name + '맞죠?')
 
     if message.content == '야':
         await message.channel.send('뭐')
-    
-    if message.content == '@이돟':
-        await message.channel.send('부르지마라.')
 
     if message.content == '?':
         await message.channel.send('?????')
@@ -91,25 +88,12 @@ async def on_message(message):
     if message.content.startswith('왜'):
         await message.channel.send(as_why[random.randrange(0, 4)])
 
-# 아래의 내용을 주석처리하니까 이상하게도 작동하기 시작함. startswith에 갯수 한계가 있다거나 문자열중 쓸 수 없는 내용이 있는게 아닐까 싶음.
-    # if message.content.startswitch('뭐더라'):
-    #     await message.channel.send('4월 생존신고 진행중입니다~! 디스코드 생존신고 채널에 생존신고 눌러주세요!' +
-    #      '닉네임도 생존신고 기간동안은 단톡방과 되도록 맞춰주세요!')
-    
     if message.content.startswith('@이돟'):
         await message.channel.send(summons_leedoh[random.randrange(0, 7)])
 
     if message.content.startswith('이돟vs차은우'):
         await message.channel.send('치명적인 오류가 발생되어 뇌를(을) 종료합니다.')
 
-    # if message.content.startswith('피카'):
-    #     await message.channel.send('피카피카!')
-
-    # if message.content.startswith('돈내놔'):
-    #     await message.channel.send('200만원이면 돼.')
-    
-    # if message.content.startswith('나의 이름은?'):
-    #     await message.channel.send(str(message.author))
 #---------------------------------------------------------------------------------------------------
 # 이돟전용
 
